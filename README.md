@@ -1,4 +1,4 @@
-# rutas-ciclo
+# Ciclos-Rutas-Vue
 
 ## Project setup
 ```
