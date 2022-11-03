@@ -1,5 +1,5 @@
 <template>
-  <div class="toolbar" role="banner">
+  <div class="toolbar">
   <img width="100" alt="Lc Logo" src="../../assets/logolcprograming3.png" />
   <span>Ciclos - Rutas - Vue</span>
   <img width="50" alt="Vue Logo" src="../../assets/logo_vue.png" />
