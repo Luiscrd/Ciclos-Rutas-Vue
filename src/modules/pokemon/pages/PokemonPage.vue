@@ -3,7 +3,7 @@
   <hr>
   <h2>Pokémon: #{{ id }} - {{ pokemon.name.toUpperCase() }}</h2>
   <div v-if="pokemon">
-    <img :src="pokemon.sprites.other.dream_world.front_default" :alt="pokemon.name" class="mt-5">
+    <img :src="pokemon.sprites.other.dream_world.front_default" :alt="pokemon.name" class="mt-5" width="250">
   </div>
 </template>
   
