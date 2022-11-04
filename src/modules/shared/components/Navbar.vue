@@ -17,7 +17,7 @@
                         <router-link class="nav-link" to="/">Pokémon List</router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link class="nav-link" :to="{ name: 'pokemon-id' }">Pokémon Page</router-link>
+                        <router-link class="nav-link" :to="{ name: 'pokemon-id', params: { id: 1 } }">Pokémon Page</router-link>
                     </li>
                 </ul>
             </div>

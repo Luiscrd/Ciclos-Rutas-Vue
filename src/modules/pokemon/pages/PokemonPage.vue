@@ -1,8 +1,8 @@
 <template>
   <h1>Pokémon Page</h1>
   <hr>
-  <h2>Pokémon: #{{ id }} - {{ pokemon.name.toUpperCase() }}</h2>
   <div v-if="pokemon">
+    <h2>Pokémon: #{{ id }} - {{ pokemon.name.toUpperCase() }}</h2>
     <img :src="pokemon.sprites.other.dream_world.front_default" :alt="pokemon.name" class="mt-5" width="250">
   </div>
 </template>
@@ -32,10 +32,10 @@ export default {
       try {
         const pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${ this.id }`).then( r => r.json() )
         this.pokemon = pokemon
-        console.log(pokemon)
+        // console.log(pokemon)
       } catch (error) {
         this.$router.push('/')
-        console.log('No hay nada que hacer aquí');
+        console.log(`Pokémon con id ${ this.id } no existe, volvemos al ListPage`);
       }
       
     }
