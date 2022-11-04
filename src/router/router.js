@@ -1,4 +1,5 @@
 import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
+import isAuthenticatedGuard from './ahut-guard'
 
 const routes = [
     {
@@ -7,7 +8,6 @@ const routes = [
     },
     {
         path: '/pokemon',
-        name: 'pokemon',
         component: () => import(/* webpackChunkName: "PokemonLayout" */ '@/modules/pokemon/layouts/PokemonLayout.vue'),
         children: [
             {
@@ -24,9 +24,9 @@ const routes = [
                 path: 'pokemonid/:id',
                 name: 'pokemon-id',
                 component: () => import(/* webpackChunkName: "PokemonPageId" */ '@/modules/pokemon/pages/PokemonPage.vue'),
-                props: ( route ) => {
+                props: (route) => {
                     const id = Number(route.params.id)
-                    return isNaN( id ) ? { id: 1 } : { id }
+                    return isNaN(id) ? { id: 1 } : { id }
                 }
             },
             {
@@ -37,8 +37,8 @@ const routes = [
     },
     {
         path: '/dbz',
-        name: 'dbz',
         component: () => import(/* webpackChunkName: "DragonBallLayout" */ '@/modules/dbz/layouts/DragonBallLayout.vue'),
+        beforeEnter: [ isAuthenticatedGuard ],
         children: [
             {
                 path: 'characters',
@@ -69,17 +69,45 @@ const router = createRouter({
     routes,
 })
 
-router.beforeEach((to, from, next) => {
-    
-    const random = Math.random() * 100
+// router.beforeEach((to, from, next) => {
 
-    if( random > 50 ) {
-        console.log('Autentifacado')
-        next()
-    } else {
-        console.log(random,'Bloqueado por el beforeEacg Guard')
-    }
+//     // TODO: Guar araproteger rutas de forma aleatoria
+
+//     const random = Math.random() * 100
+
+//     if( random > 50 ) {
+//         console.log('Autentifacado')
+//         next()
+//     } else {
+//         console.log(random,'Bloqueado por el beforeEacg Guard')
+//         next({
+//             name: 'pokemon-about'
+//         })
+//     }
+
+//   })
+
+// const canAcces = () => {
+//     return new Promise(resolve => {
+
+//         const random = Math.random() * 100
+
+//         if (random > 50) {
+//             console.log(random, 'Autentifacado - CanAcces')
+//             resolve(true)
+//         } else {
+//             console.log(random, 'Bloqueado por el beforeEacg Guard - CanAcces')
+//             resolve(false)
+//         }
+//     })
+// }
+
+// router.beforeEach( async (to, from, next) => {
+
+//     const authorized = await canAcces()
+
+//     authorized ? next() : next({ name: 'pokemon-about' })
     
-  })
+// })
 
 export default router
