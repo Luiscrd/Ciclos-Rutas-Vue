@@ -10,20 +10,20 @@
 export default {
   data() {
     return {
-      name: 'Juan Carlos'
+      name: 'Bualbasur'
     }
   },
   methods: {
     onChangeName() {
       console.log('onChangeName')
-      this.name = 'Coral'
+      this.name = 'Pikachu'
     }
   },
   beforeCreate() {
     console.log('beforeCreate')
   },
   created() {
-    this.name = 'Luis'
+    this.name = 'Charmander'
     console.log('created')
     // TODO: Peticiones HTTP
   },
@@ -65,24 +65,26 @@ export default {
 
 <style scoped>
 .btn:hover {
-    color: white;
-    background-color: #035f68;
-    border-color: #035f68;;
+  color: white;
+  background-color: #535252;
+  border-color: #535252;
+  ;
 }
+
 .btn-primary {
-    --bs-btn-color: #fff;
-    --bs-btn-bg: #038996;
-    --bs-btn-border-color: #038996;
-    --bs-btn-hover-color: #fff;
-    --bs-btn-hover-bg: #038996;
-    --bs-btn-hover-border-color: #038996;
-    --bs-btn-focus-shadow-rgb: 49,132,253;
-    --bs-btn-active-color: #fff;
-    --bs-btn-active-bg: #038996;
-    --bs-btn-active-border-color: #038996;
-    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-    --bs-btn-disabled-color: #fff;
-    --bs-btn-disabled-bg: #038996;
-    --bs-btn-disabled-border-color: #038996;
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #6d6c6c;
+  --bs-btn-border-color: #6d6c6c;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #6d6c6c;
+  --bs-btn-hover-border-color: #6d6c6c;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #6d6c6c;
+  --bs-btn-active-border-color: #6d6c6c;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #6d6c6c;
+  --bs-btn-disabled-border-color: #6d6c6c;
 }
 </style>

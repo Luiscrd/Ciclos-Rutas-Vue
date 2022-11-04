@@ -3,7 +3,7 @@
   <hr>
   <div v-if="pokemon">
     <h2>Pokémon: #{{ id }} - {{ pokemon.name.toUpperCase() }}</h2>
-    <img :src="pokemon.sprites.other.dream_world.front_default" :alt="pokemon.name" class="mt-5" width="250">
+    <img :src="pokemon.sprites.other.dream_world.front_default" :alt="pokemon.name" class="mt-5 mb-5" height="350">
   </div>
 </template>
   
@@ -30,14 +30,14 @@ export default {
   methods: {
     async getPokemon() {
       try {
-        const pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${ this.id }`).then( r => r.json() )
+        const pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${this.id}`).then(r => r.json())
         this.pokemon = pokemon
         // console.log(pokemon)
       } catch (error) {
         this.$router.push('/')
-        console.log(`Pokémon con id ${ this.id } no existe, volvemos al ListPage`);
+        console.log(`Pokémon con id ${this.id} no existe, volvemos al ListPage`);
       }
-      
+
     }
   },
   watch: {

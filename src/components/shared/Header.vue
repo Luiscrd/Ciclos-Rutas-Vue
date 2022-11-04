@@ -32,7 +32,7 @@ a:hover {
 }
 
 a:hover {
-  color: #038996;
+  color: #6d6c6c;
 }
 
 .spacer {
@@ -45,7 +45,7 @@ a:hover {
   height: 90px;
   display: flex;
   align-items: center;
-  background-color: #038996;
+  background-color: #6d6c6c;
   color: white;
   font-weight: bold;
   font-size: 1.5em;

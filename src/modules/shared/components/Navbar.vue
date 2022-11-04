@@ -10,14 +10,33 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <router-link class="nav-link" to="/about">About Page</router-link>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Pokemons</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <router-link class="nav-link" :to="{ name: 'pokemon-about' }">About</router-link>
+                            </li>
+                            <li>
+                                <router-link class="nav-link" :to="{ name: 'pokemon-list' }">Pokémon List</router-link>
+                            </li>
+                            <li>
+                                <router-link class="nav-link" :to="{ name: 'pokemon-id', params: { id: 1 } }">Pokémon
+                                    Page</router-link>
+                            </li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <router-link class="nav-link" to="/">Pokémon List</router-link>
-                    </li>
-                    <li class="nav-item">
-                        <router-link class="nav-link" :to="{ name: 'pokemon-id', params: { id: 1 } }">Pokémon Page</router-link>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Dbz</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <router-link class="nav-link" :to="{ name: 'dbz-about' }">About</router-link>
+                            </li>
+                            <li>
+                                <router-link class="nav-link" :to="{ name: 'dbz-characters' }">Characters</router-link>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -27,7 +46,9 @@
 
 <script>
 export default {
+    components: {
 
+    }
 }
 </script>
 
@@ -36,7 +57,7 @@ export default {
     filter: brightness(47%);
 }
 
-.router-link-active{
+.router-link-active {
     font-weight: bold;
 }
 </style>

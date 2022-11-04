@@ -19,7 +19,7 @@ export default {
 .footer{
   width: 100%;
   position: relative;
-  background-color: #038996;
+  background-color: #6d6c6c;
   color: white;
   padding: 20px 2%;
   display: flex;
