@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
 
 const routes = [
     {
@@ -64,16 +64,22 @@ const routes = [
 ]
 
 const router = createRouter({
-    history: createWebHashHistory(),
+    history: createWebHistory(),
+    // history: createWebHashHistory(),
     routes,
 })
 
 router.beforeEach((to, from, next) => {
-    if (to.path === '/' && to.hash.startsWith('#/')) {
-      next(to.hash.substr(1))
+    
+    const random = Math.random() * 100
+
+    if( random > 50 ) {
+        console.log('Autentifacado')
+        next()
     } else {
-      next()
+        console.log(random,'Bloqueado por el beforeEacg Guard')
     }
+    
   })
 
 export default router
