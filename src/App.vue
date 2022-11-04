@@ -11,9 +11,9 @@ import { defineAsyncComponent } from 'vue'
 export default {
   name: 'App',
   components: {
-    Header: defineAsyncComponent(() => import(/* webpackChunkName: "Header" */ '@/components/shared/Header.vue')),
+    Header: defineAsyncComponent(() => import(/* webpackChunkName: "Header" */ '@/modules/shared/components/Header.vue')),
     Navbar: defineAsyncComponent(() => import(/* webpackChunkName: "Navbar" */ '@/modules/shared/components/Navbar.vue')),
-    Footer: defineAsyncComponent(() => import(/* webpackChunkName: "Foter" */ '@/components/shared/Footer.vue')),
+    Footer: defineAsyncComponent(() => import(/* webpackChunkName: "Foter" */ '@/modules/shared/components/Footer.vue')),
   }
 }
 </script>
